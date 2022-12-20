@@ -11,13 +11,6 @@ void main (){
       
   */
 
-
-
-
-
-
-
-
   String source = 'a';
 
   Map <String, List> graph = {
@@ -29,8 +22,9 @@ void main (){
     'f': [],
   };
 
-  print("depth ->   ${depthFirst(graph, source)}");
-  print("breadth -> ${breadthFirst(graph, source)}");
+  //print("depth ->   ${depthFirst(graph, source)}");
+  //print("breadth -> ${breadthFirst(graph, source)}");
+  depthFirstRecursive(graph, source);
 }
 
 String depthFirst(Map <String, List> graph, source){
@@ -59,6 +53,20 @@ String depthFirst(Map <String, List> graph, source){
     graph[current]!.forEach((element) {
       stack.add(element);
     });
+  }
+
+  return path;
+}
+
+String depthFirstRecursive(Map <String, List> graph, source){
+
+  String path = '';
+  void deeper(Map <String, List> graph, source){
+    //print(source);
+    path += source;
+    graph[source]!.forEach((element) {
+      deeper(graph, element);
+    });  
   }
 
   return path;
