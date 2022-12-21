@@ -26,6 +26,7 @@ void main() {
   String finish = 'k';
 
   print(depth(graph, start, finish));
+  print(recursive(graph, start, finish));
 }
 
 bool depth(Map<String, List> graph, String start, String finish) {
@@ -43,5 +44,23 @@ bool depth(Map<String, List> graph, String start, String finish) {
     }
   }
 
+  return false;
+}
+
+bool recursive(graph, start, finish) {
+  List stack =[start];
+
+  bool deeper(graph, start, finish) {
+    if (start == finish) {
+      return true;
+    }
+    graph[start].forEach((element) {
+      if (deeper(graph, element, finish) == true) {
+        return true;
+      };
+    
+    });
+    return false;
+  }
   return false;
 }
