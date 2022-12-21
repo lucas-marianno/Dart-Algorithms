@@ -1,7 +1,8 @@
 void main (){
 
   /*
-  ↑ ↓ → ←
+
+    Graph 1
   
       A  →  C
       ↓     ↓ 
@@ -13,8 +14,8 @@ void main (){
 
   String source = 'a';
 
-  Map <String, List> graph = {
-    'a': ['c', 'b'],
+  Map <String, List> graph1 = {
+    'a': ['b', 'c'],
     'b': ['d'],
     'c': ['e'],
     'd': ['f'],
@@ -22,9 +23,31 @@ void main (){
     'f': [],
   };
 
-  //print("depth ->   ${depthFirst(graph, source)}");
-  //print("breadth -> ${breadthFirst(graph, source)}");
-  depthFirstRecursive(graph, source);
+/*
+
+    Graph 2
+  
+      A  →  B
+      ↓     ↓ 
+      C     D
+      ↓
+      E  →  F
+      
+  */
+
+
+  Map <String, List> graph2 = {
+    'a': ['b', 'c'],
+    'b': ['d'],
+    'c': ['e'],
+    'd': [],
+    'e': ['f'],
+    'f': [],
+  };
+
+  print("depth          ->   ${depthFirst(graph2, source)}");
+  print("breadth        ->   ${breadthFirst(graph2, source)}");
+  print("dpth recursive ->   ${depthFirstRecursive(graph2, source)}");
 }
 
 String depthFirst(Map <String, List> graph, source){
@@ -62,12 +85,14 @@ String depthFirstRecursive(Map <String, List> graph, source){
 
   String path = '';
   void deeper(Map <String, List> graph, source){
-    //print(source);
+
     path += source;
     graph[source]!.forEach((element) {
       deeper(graph, element);
     });  
   }
+
+  deeper(graph, source);
 
   return path;
 }
