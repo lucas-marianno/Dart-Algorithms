@@ -6,6 +6,6 @@ This repository is being used as a notebook for the course available at [freeCod
 
 01 - Depth First and Breadth First traversal algorithms;
 
-02 - Has Path - Challenge before algorithm explanation & recurdive depth first algorithm implemented;
+02 - Has Path - Challenge before algorithm explanation & recursive depth first algorithm implemented;
 
 
