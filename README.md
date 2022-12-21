@@ -4,5 +4,5 @@ This repository is being used as a notebook for the course available at [freeCod
 
 ## File Summary
 
-01 - Depth First and Breadth First traversal algorithms;
-02 - Has Path - Challenge before algorithm explanation;
+01 - Depth First and Breadth First traversal algorithms.
+02 - Has Path - Challenge before algorithm explanation.
