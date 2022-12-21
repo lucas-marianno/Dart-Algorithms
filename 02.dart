@@ -23,7 +23,7 @@ void main() {
   };
 
   String start = 'f';
-  String finish = 'k';
+  String finish = 'i';
 
   print(depth(graph, start, finish));
   print(recursive(graph, start, finish));
@@ -47,20 +47,14 @@ bool depth(Map<String, List> graph, String start, String finish) {
   return false;
 }
 
-bool recursive(graph, start, finish) {
-  List stack =[start];
-
-  bool deeper(graph, start, finish) {
-    if (start == finish) {
+bool recursive(Map<String, List> graph, String start, String finish) {
+  if (start == finish) {
+    return true;
+  }
+  for (int i = 0; i < graph[start]!.length; i++) {
+    if (recursive(graph, graph[start]![i], finish) == true) {
       return true;
     }
-    graph[start].forEach((element) {
-      if (deeper(graph, element, finish) == true) {
-        return true;
-      };
-    
-    });
-    return false;
   }
   return false;
 }
