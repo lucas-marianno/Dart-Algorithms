@@ -4,8 +4,10 @@ This repository is being used as a notebook for the course available at [freeCod
 
 ## File Summary
 
-01 - Depth First and Breadth First traversal algorithms;
+01 - Depth First and Breadth First traversal algorithms (acyclic);
 
-02 - Has Path - Challenge before algorithm explanation & recursive depth first algorithm implemented;
+02 - Has Path - Challenge before algorithm explanation & recursive depth first algorithm implemented (acyclic);
+
+03 - Depth, Breadth, and DepthRecursive algorithms implemented with Cyclic Graph Safety;
 
 
