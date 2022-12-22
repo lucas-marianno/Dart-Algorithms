@@ -87,13 +87,6 @@ void testAlgos(Map<String, List> graph) {
   List nodesA = 'abcdef'.split('');
   List nodesB = 'abcdef'.split('');
 
-
-
-
-
-
-
-
   nodesA.forEach((a) {
     nodesB.forEach((b) {
       print('Test #$nOfTests');
@@ -102,8 +95,6 @@ void testAlgos(Map<String, List> graph) {
       print('recursive: ${recursive(graph, a, b)}');
       //print('depth:     ${depth(graph, a, b)}');
       //print('breadth:   ${breadth(graph, a, b)}');
-
-      
 
       nOfTests++;
       if(nOfTests>=100){
