@@ -10,4 +10,6 @@ This repository is being used as a notebook for the course available at [freeCod
 
 03 - Depth, Breadth, and DepthRecursive algorithms implemented with Cyclic Graph Safety;
 
+04 - Longest Increasing Subsequence Challenge - solved using recursion.
+
 
