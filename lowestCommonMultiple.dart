@@ -1,7 +1,7 @@
 void main(){
 
-  List<int> numeros = [130,1310,4];
-
+  List<int> numeros = [2,3,4];
+  print('LCM of $numeros is:');
   print(lcmOf(numeros));
 
   //print(factorsOf(3, 12));
@@ -12,6 +12,18 @@ int lcmOf (List<int> numlst){
   numlst = numlst.toSet().toList(); // removes duplicates
   numlst.sort(); //orders list from smallest to largest number
 
+  //rules out trivial cases
+  for(int n in numlst){
+    if(numlst.last % n != 0){
+      break;
+    }else{
+      if(numlst.last % n == 0 && numlst.last ==n){
+        return numlst.last;
+      }
+    }
+  }
+
+
   //sets the limit for the multiplication
   int limit = 1;
   for(int n in numlst){
@@ -21,7 +33,7 @@ int lcmOf (List<int> numlst){
   //creates the lists of list of multiples
   List<List<int>> multiplesList = [];
   for(int n in numlst){
-    multiplesList.add(multiplesOf(n, limit));
+    multiplesList.add(multiplesOf(n,numlst.last, limit));
   }
   
   //finds the common multiples between numbers
@@ -31,14 +43,16 @@ int lcmOf (List<int> numlst){
   }
   
   //returns the smallest multiple
-  return unique.toList()[1];
+  return unique.toList()[0];
 }
 
 
-List<int> multiplesOf(int n, int limit){
-  List<int> factors = [0];
-  while(factors.last < limit){
-    factors.add(factors.last+n);
+List<int> multiplesOf(int n,int largestInt, int limit){
+  int start = largestInt-(largestInt%n);
+  List<int> multiples = [start];
+  while(multiples.last < limit){
+    multiples.add(multiples.last+n);
   }
-  return factors;
+  print(multiples.sublist(1));
+  return multiples.sublist(1);
 }
